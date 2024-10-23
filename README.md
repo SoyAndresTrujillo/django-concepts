@@ -30,3 +30,11 @@ note: the project name must be in lowercase and use underscore instead of dash
 ```bash
 python manage.py --help
 ```
+## Run the server
+```bash
+python manage.py runserver
+```
+# Create new app into the project my_first_project file
+```bash
+python manage.py startapp my_first_app
+```
