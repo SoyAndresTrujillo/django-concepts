@@ -18,20 +18,12 @@ Including another URLconf
 from django.urls import path
 from django.http import HttpResponse
 
-from .views import my_view, profile_view
-
-
-def my_view(request, *args, **kwargs):
-    # tupla ()
-    print(args)
-    # dictionary {}
-    print(kwargs)
-    return HttpResponse("Hello, World!, this is my first list")
+from .views import my_test_view, profile_view, CarListView
 
 
 urlpatterns = [
-    path("list/", my_view),
-    path("details/<int:id>", my_view),
-    path("brand/<str:brand>", my_view),
+    # path("list/", my_test_view),
+    path("details/<int:id>", my_test_view),
     path("profile/<int:id>", profile_view),
+    path("list/", CarListView.as_view()),
 ]
