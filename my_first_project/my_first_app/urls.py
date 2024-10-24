@@ -15,11 +15,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from django.http import HttpResponse
+
+from .views import my_view, profile_view
+
+
+def my_view(request, *args, **kwargs):
+    # tupla ()
+    print(args)
+    # dictionary {}
+    print(kwargs)
+    return HttpResponse("Hello, World!, this is my first list")
+
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("cars/", include("my_first_app.urls")),
-    path("authors/", include("my_first_app.urls")),
+    path("list/", my_view),
+    path("details/<int:id>", my_view),
+    path("brand/<str:brand>", my_view),
+    path("profile/<int:id>", profile_view),
 ]
