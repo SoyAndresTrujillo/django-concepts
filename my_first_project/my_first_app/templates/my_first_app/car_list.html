@@ -10,7 +10,7 @@
 <body>
     <h1>Car List</h1>
     {% for car in car_list %}
-    <li>{{ car.title }}</li>
+    <li>The car is {{ car.title }} - with year {{ car.year }} - and color {{ car.color }}</li>
     {% endfor %}
 </body>
 

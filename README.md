@@ -93,3 +93,18 @@ BMW - 2023 - Black
 ```bash
 pip install ipython
 ```
+## Queries and filter in Django: Optimization and advanced strategies
+```bash
+Author.objects.first() # Get the first author
+Author.objects.last() # Get the last author
+Author.objects.all() # Get all authors
+Author?? # Show the author model
+Author.objects.filter(first_name="John") # Get all authors with the first name "John"
+Author.objects.filter(first_name="John").first() # Get the first author with the first name "John"
+Author.objects.create(first_name='Andres', birth_date='2001-01-13') # Create a new author
+Author.objects.filter(first_name='Andres').delete() # Delete the author with the first name "Andres"
+Author.objects.all().order_by('first_name') # Order the authors by the first name
+Author.objects.all().order_by('-first_name') # Order the authors by the first name in descending order
+Author.objects.all().order_by('first_name')[0] # Get the first author
+Author.objects.all().order_by('first_name')[0:3] # Get the first three authors
+```
